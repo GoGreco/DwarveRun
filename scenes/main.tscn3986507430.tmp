@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl1hp1dkcqfl0"]
+
+[ext_resource type="PackedScene" uid="uid://dt4xtvhwg7nlv" path="res://scenes/Background.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarv.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/floor.tscn" id="3_tbgi4"]
+
+[node name="main" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_sugp2")]
+
+[node name="Dwarve" parent="." instance=ExtResource("2_jyhfs")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_tbgi4")]
