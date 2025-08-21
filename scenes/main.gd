@@ -38,7 +38,7 @@ func new_game():
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta): 
+func _process(delta):  
 	speed = start_speed
 	
 	#camera and dwarve velocity
