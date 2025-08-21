@@ -1,33 +1,20 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://cl1hp1dkcqfl0"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://cl1hp1dkcqfl0"]
->>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
+[gd_scene load_steps=6 format=3 uid="uid://dgb8xkyni00qd"]
 
-[ext_resource type="Script" uid="uid://c8jyrmtllpr71" path="res://scenes/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dt4xtvhwg7nlv" path="res://scenes/Background.tscn" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarv.tscn" id="2_jyhfs"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://bfubehux1nnqh" path="res://scenes/hud.tscn" id="2_tbgi4"]
-=======
->>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
-[ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/Floor.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarv.tscn" id="1_rarhs"]
+[ext_resource type="Script" uid="uid://bm7tj06eirngl" path="res://scenes/main.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://dt4xtvhwg7nlv" path="res://scenes/Background.tscn" id="2_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/Floor.tscn" id="3_c01mt"]
+[ext_resource type="PackedScene" uid="uid://bfubehux1nnqh" path="res://scenes/hud.tscn" id="4_nxtc6"]
 
-[node name="main" type="Node"]
-script = ExtResource("1_jyhfs")
+[node name="Main" type="Node"]
+script = ExtResource("1_vcsgt")
 
-<<<<<<< HEAD
-[node name="HUD" parent="." instance=ExtResource("2_tbgi4")]
+[node name="Dwarve" parent="." instance=ExtResource("1_rarhs")]
 
-=======
->>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
-[node name="Floor" parent="." instance=ExtResource("3_tbgi4")]
+[node name="Background" parent="." instance=ExtResource("2_vcsgt")]
 
-[node name="Background" parent="." instance=ExtResource("1_sugp2")]
+[node name="Floor" parent="." instance=ExtResource("3_c01mt")]
 
-[node name="Dwarve" parent="." instance=ExtResource("2_jyhfs")]
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_tbgi4")]
+[node name="HUD" parent="." instance=ExtResource("4_nxtc6")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)

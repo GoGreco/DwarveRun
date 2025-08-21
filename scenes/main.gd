@@ -6,18 +6,26 @@ extends Node
 @onready var dwarve = $Dwarve
 @onready var camera = $Camera2D
 @onready var floor = $Floor
+@onready var score_label = $HUD/score
+@onready var high_score_label = $HUD/high_score
+@onready var start_label = $HUD/start
+
 
 #game start variables
 const dwarve_start_position := Vector2i(80, 576)
 const camera_start_position := Vector2i(576, 324)
+var game_running : bool
 
 #movement Variables
 var speed
 const max_speed : float = 25.0
 const start_speed : float = 10.0
+const speed_modifier : float = 5000.00
+
 var screen_size : Vector2i
 
 #score variables
+var score_changer
 var score : int
 const score_modifier = 10
 
@@ -30,25 +38,49 @@ func _ready() -> void:
 #Function that will reset the game variables to their original state
 func new_game():
 	
+	#guarantee the game will start from the beginning
 	score = 0
 	dwarve.position = dwarve_start_position
 	dwarve.velocity = Vector2i(0, 0)
 	camera.position = camera_start_position
 	floor.position = Vector2i(0, 0)
+	game_running = false	
+	start_label.show()
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):  
 	speed = start_speed
 	
-	#camera and dwarve velocity
-	#basically the dwarve will move along with the camera while everything happens around them
-	dwarve.position.x += speed
-	camera.position.x += speed
-	
-	#updating the score based on the speed
-	score+= speed/score_modifier
-	print(score)
-	#updating the floor position
-	if camera.position.x - floor.position.x > screen_size.x *1.5:
-		floor.position.x += screen_size.x 
+	if game_running:
+		#camera and dwarve velocity
+		#basically the dwarve will move along with the camera while everything happens around them
+		dwarve.position.x += speed
+		camera.position.x += speed
+		
+		score_changer = int(speed)
+		
+		if speed < max_speed:
+			speed += float(score)/speed_modifier
+		else:
+			speed = max_speed
+		
+		
+		#updating the score based on the score_chager wich is speed before it was altered and showing it on screen
+		score+= score_changer
+		show_score()
+		
+		#increase the speed value
+		
+		
+		#updating the floor position
+		if camera.position.x - floor.position.x > screen_size.x *1.5:
+			floor.position.x += screen_size.x 
+	else:
+		if Input.is_action_just_pressed("ui_accept"):
+			game_running = true
+			start_label.hide()
+			
+
+func show_score():
+	score_label.text = "SCORE: " + str(score/score_modifier)
