@@ -1,16 +1,26 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://cl1hp1dkcqfl0"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://cl1hp1dkcqfl0"]
+>>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
 
 [ext_resource type="Script" uid="uid://c8jyrmtllpr71" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dt4xtvhwg7nlv" path="res://scenes/Background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarv.tscn" id="2_jyhfs"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bfubehux1nnqh" path="res://scenes/hud.tscn" id="2_tbgi4"]
+=======
+>>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
 [ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/Floor.tscn" id="3_tbgi4"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyhfs")
 
+<<<<<<< HEAD
 [node name="HUD" parent="." instance=ExtResource("2_tbgi4")]
 
+=======
+>>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
 [node name="Floor" parent="." instance=ExtResource("3_tbgi4")]
 
 [node name="Background" parent="." instance=ExtResource("1_sugp2")]
