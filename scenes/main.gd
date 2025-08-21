@@ -44,7 +44,7 @@ func new_game():
 	dwarve.velocity = Vector2i(0, 0)
 	camera.position = camera_start_position
 	floor.position = Vector2i(0, 0)
-	game_running = false	
+	game_running = false
 	start_label.show()
 	
 	
@@ -77,7 +77,7 @@ func _process(delta):
 		if camera.position.x - floor.position.x > screen_size.x *1.5:
 			floor.position.x += screen_size.x 
 	else:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_pressed("ui_accept"):
 			game_running = true
 			start_label.hide()
 			

@@ -11,14 +11,17 @@ const jump_speed = -1800
 #delta is the time elapsed from the last frame to the next
 func _physics_process(delta):
 	velocity.y += delta*gravity
-	
 	if is_on_floor():
-		
-		if Input.is_action_just_pressed("ui_accept"):
-			jump_height_timer.start()
-			velocity.y = jump_speed
+		if not get_parent().game_running:
+			animated_sprite_2d.play("idle")
+			
 		else:
-			animated_sprite_2d.play("walk")
+			if Input.is_action_just_pressed("ui_accept"):
+				jump_height_timer.start()
+				velocity.y = jump_speed
+			else:
+				animated_sprite_2d.play("walk")
+
 	else:
 		animated_sprite_2d.play("jump")
 	move_and_slide()
