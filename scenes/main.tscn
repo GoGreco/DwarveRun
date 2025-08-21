@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgb8xkyni00qd"]
 
-[ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarv.tscn" id="1_rarhs"]
+[ext_resource type="PackedScene" uid="uid://bybd1r3ngeerr" path="res://scenes/Dwarve.tscn" id="1_rarhs"]
 [ext_resource type="Script" uid="uid://bm7tj06eirngl" path="res://scenes/main.gd" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://dt4xtvhwg7nlv" path="res://scenes/Background.tscn" id="2_vcsgt"]
-[ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/Floor.tscn" id="3_c01mt"]
+[ext_resource type="PackedScene" uid="uid://etevjphhtco6" path="res://scenes/Ground.tscn" id="3_c01mt"]
 [ext_resource type="PackedScene" uid="uid://bfubehux1nnqh" path="res://scenes/hud.tscn" id="4_nxtc6"]
 
 [node name="Main" type="Node"]
@@ -13,7 +13,7 @@ script = ExtResource("1_vcsgt")
 
 [node name="Background" parent="." instance=ExtResource("2_vcsgt")]
 
-[node name="Floor" parent="." instance=ExtResource("3_c01mt")]
+[node name="Ground" parent="." instance=ExtResource("3_c01mt")]
 
 [node name="HUD" parent="." instance=ExtResource("4_nxtc6")]
 
