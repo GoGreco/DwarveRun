@@ -44,7 +44,11 @@ animations = [{
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5qxdi")
+<<<<<<< HEAD
+frame_progress = 0.0657913
+=======
 frame_progress = 0.449199
+>>>>>>> 57ae58c98cbeffe9b58166d905acb245c66108a2
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
