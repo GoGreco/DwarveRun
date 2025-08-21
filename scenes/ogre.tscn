@@ -44,7 +44,7 @@ animations = [{
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_8tc31")
-frame_progress = 0.368307
+frame_progress = 0.910162
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-15, 5, -47, -36, -52, -68, -38, -87, 2, -86, 17, -51, 30, -51, 74, -11, 66, 59, 67, 160, -27, 163, -16, 67, -47, 102, -79, 99, -80, 68)
