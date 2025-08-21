@@ -1,5 +1,9 @@
 extends Node
-
+#preloading obstacles
+var ogre = preload("res://scenes/ogre.tscn")
+var goblin = preload("res://scenes/goblin.tscn")
+var enemy_types := [ogre, goblin]
+var enemies_created : Array
 
 #game variables
 #import variables
@@ -23,6 +27,8 @@ const start_speed : float = 10.0
 const speed_modifier : float = 5000.00
 
 var screen_size : Vector2i
+#enemy variable
+var last_enemy
 
 #score variables
 var score_changer

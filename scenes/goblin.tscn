@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce6unlftttdyr"]
+
+[ext_resource type="Texture2D" uid="uid://da0eqym4yklyx" path="res://assets/images/obstacles/goblin_dude.png" id="1_tjgje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yait"]
+atlas = ExtResource("1_tjgje")
+region = Rect2(0, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3g0h"]
+atlas = ExtResource("1_tjgje")
+region = Rect2(24, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76chb"]
+atlas = ExtResource("1_tjgje")
+region = Rect2(48, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1p1y"]
+atlas = ExtResource("1_tjgje")
+region = Rect2(72, 0, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkl8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yait")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3g0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76chb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1p1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Goblin" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_lkl8q")
+frame_progress = 0.772505
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-46, -26, -18, -20, 16, -20, 47, -21, 17, 8, 37, 38, -30, 40, -33, 30, -49, 26, -46, 5, -25, 1)

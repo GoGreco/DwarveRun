@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bf8cvxqopj6uq"]
+
+[ext_resource type="Texture2D" uid="uid://chaafsno6wgqg" path="res://assets/images/obstacles/ogre_dude.png" id="1_w80oy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w80oy"]
+atlas = ExtResource("1_w80oy")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5ei5"]
+atlas = ExtResource("1_w80oy")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18hxh"]
+atlas = ExtResource("1_w80oy")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_offou"]
+atlas = ExtResource("1_w80oy")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw5dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w80oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5ei5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18hxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_offou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Ogre" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_rw5dj")
+frame_progress = 0.603502
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-18, 2, -22, -22, -47, -39, -46, -76, -35, -88, 4, -83, 22, -54, 75, -11, 51, 78, 66, 160, -30, 160, -17, 69, -61, 107, -81, 100, -81, 68)
